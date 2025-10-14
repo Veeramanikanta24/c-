@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+class Book {
+private:
+    string title;
+    int pages;
+public:
+    Book(string t, int p) {
+        title = t;
+        pages = p;
+    };
+    Book(const Book &b) {
+        title = b.title;
+        pages = b.pages;
+    }
+    void display() {
+        cout << "Title: " << title << ", Pages: " << pages << endl;
+    }
+};
+
+int main() {
+    Book b1("C++ Programming", 350); 
+    Book b2 = b1;  
+    cout << "Original Book: ";
+    b1.display();
+    cout << "Copied Book: ";
+    b2.display();
+    return 0;
+}
